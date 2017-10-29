@@ -13,7 +13,9 @@ var express         = require("express"),
     middleware      = require("./middleware/index.js");
     
 
-mongoose.connect("mongodb://localhost/zodiac");
+//mongoose.connect("mongodb://localhost/zodiac");
+mongoose.connect("mongodb://abhi:zodiac@ds139585.mlab.com:39585/zodiac");
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
