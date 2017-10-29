@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <h1 class="text-center">Login</h1>
+    <div class="form-style">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <input class="form-control" name="username" type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" type="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Submit</button>
+            </div>
+        </form>
+        <a href="/events">Back</a>
+    </div>
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1 class="text-center">Create new event</h1>
+    <div class="form-style">
+        <form action="/events" method="POST">
+            <div class="form-group">
+                <input class="form-control" name="event[name]" type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="event[image]" type="text" placeholder="Image url" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="event[description]" placeholder="Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="event[venu]" type="text" placeholder="Venu" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="event[date]" type="text" placeholder="Date" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="event[time]" type="text" placeholder="Time" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="event[cost]" min="0.0" step="1" type="number" placeholder="Cost" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Submit</button>
+            </div>
+        </form>
+        <a href="/events">Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,73 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="card card-margin" style="margin-bottom=0;">
+        <img class="card-img-top" src="<%= event.image %>">
+        <div class="card-body">
+            <h4 class="card-title"><%= event.name %></h4>
+            <p class="card-text"><%= event.description %></p>
+            <% if(currentUser && currentUser.username == "Abhi") { %>
+                <a class="btn btn-outline-warning btn-sm" href="/events/<%= event._id %>/edit">Edit</a>
+                <form class="inline" action="/events/<%= event._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-outline-danger btn-sm">Delete</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-sm-12 card-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Comments :</h4>
+                    <form action="/events/<%= event._id %>/comments" method="POST">
+                        <div class="form-group">
+                            <textarea class="form-control" name="comment[text]" placeholder="Comment" required></textarea>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-primary">Add New Comment</button>
+                        </div>
+                    </form>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% event.comments.forEach(function(comment){ %>
+                        <li class="list-group-item">
+                            <strong><%= comment.author.username %></strong>
+                            <p class="comment"><%= comment.text %></p>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                <a class="btn btn-sm btn-outline-warning" href="/events/<%= event._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                                <form class="inline" action="/events/<%= event._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12 card-margin">
+            <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
+                <div class="card-header"><h5>Info :</h5></div>
+                <div class="card-body">
+                    <strong>Venu : </strong><%= event.venu %>
+                    <br>
+                    <strong>Date : </strong><%= event.date %>
+                    <br>
+                    <strong>Time : </strong><%= event.time %>
+                    <br>
+                    <strong>Cost : </strong><%= event.cost %> &#8377; per person
+                    <br>
+                    <br>
+                    <form method="POST" action="/events/<%= event._id %>/regs">
+                        <button class="btn btn-block btn-success">Register</button>
+                    </form>
+                    <br>
+                    <% if(currentUser && currentUser.username == "Abhi") { %>
+                        <a class="btn btn-block btn-danger" href="/events/<%= event._id %>/regs">Users Registered</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

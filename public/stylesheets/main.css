@@ -1,0 +1,64 @@
+.btn-sm {
+    margin-right: 3px;
+    font-size: 70%;
+    padding: 2px;
+}
+
+.comment {
+    margin: 0;
+}
+
+.inline {
+    display: inline;
+}
+
+.form-style{
+    min-width: 300px;
+    width: 40%;
+    margin: 25px auto;
+}
+
+.card-margin {
+    margin-bottom: 20px;
+}
+
+.jumbotron{
+    background: url("../images/congruent_outline.png");
+    color: white;
+}
+
+.org{
+    width: 90%;
+}
+
+.center-img{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: url("../images/round.png");
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer p{
+    margin: 20px 20px;
+} 

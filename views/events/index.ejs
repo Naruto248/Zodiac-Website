@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Zodiac has brought many exciting events this year !</h1>
+            <p>You can register in any of the following event.</p>
+            <% if(currentUser && currentUser.username == "Abhi"){ %>
+                <div>
+                    <a class="btn btn-primary btn-lg" href="/events/new">Add New Event</a>
+                </div>
+            <% } %>
+        </div>
+        
+        <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+            <% for(var i=0; i<events.length; i++){ %>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-margin">
+                        <img class="card-img-top" src="<%= events[i].image %>">
+                        <div class="card-body">
+                            <h4 class="card-title"><%= events[i].name %></h4>
+                            <a href="/events/<%= events[i]._id %>" class="btn btn-primary">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+<% include ../partials/footer %>
