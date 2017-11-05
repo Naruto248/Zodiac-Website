@@ -13,8 +13,8 @@ var express         = require("express"),
     middleware      = require("./middleware/index.js");
     
 
-// mongoose.connect("mongodb://localhost/zodiac");
-mongoose.connect("mongodb://abhi:zodiac@ds139585.mlab.com:39585/zodiac");
+mongoose.connect("mongodb://localhost/zodiac");
+// mongoose.connect("mongodb://abhi:zodiac@ds139585.mlab.com:39585/zodiac");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
@@ -268,7 +268,8 @@ app.get("/login", function(req, res){
 app.post("/login", passport.authenticate("local",
     {
         successRedirect: "/events",
-        failureRedirect: "/login"
+        failureRedirect: "/login",
+        failureFlash: 'Incorrect username or password !'
     }), function(req, res){
 });
 
@@ -276,7 +277,7 @@ app.post("/login", passport.authenticate("local",
 app.get("/logout",function(req, res){
     req.flash("success", "See You Again !");
     req.logout();
-    res.redirect("back");
+    res.redirect("/events");
 });
 
 
