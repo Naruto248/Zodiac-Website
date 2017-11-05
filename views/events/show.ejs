@@ -50,7 +50,7 @@
                 <div class="card-body">
                     <strong>Venu : </strong><%= event.venu %>
                     <br>
-                    <strong>Date : </strong><%= event.date %>
+                    <strong>Date : </strong><%= event.date.substring(8,10) %>/<%= event.date.substring(5,7) %>/<%= event.date.substring(2,4) %>
                     <br>
                     <strong>Time : </strong><%= event.time %>
                     <br>
