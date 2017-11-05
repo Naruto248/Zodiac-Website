@@ -41,6 +41,7 @@
 html {
     position: relative;
     min-height: 100%;
+    font-size: 0.8rem;
 }
 
 body {
@@ -62,3 +63,17 @@ body {
 .footer p{
     margin: 20px 20px;
 } 
+
+/* Responsive typograph */
+
+@media (min-width: 540px){
+    html {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 960px){
+    html {
+        font-size: 1.0rem;
+    }
+}
