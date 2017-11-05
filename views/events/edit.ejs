@@ -8,7 +8,7 @@
                 <input class="form-control" name="event[name]" type="text" value="<%= event.name %>">
             </div>
             <div class="form-group">
-                <input class="form-control" name="event[image]" type="text" value="<%= event.image %>">
+                <input class="form-control" name="event[image]" type="url" value="<%= event.image %>">
             </div>
             <div class="form-group">
                 <textarea class="form-control" name="event[description]"><%= event.description %></textarea>
@@ -17,10 +17,10 @@
                 <input class="form-control" name="event[venu]" type="text" value="<%= event.venu %>">
             </div>
             <div class="form-group">
-                <input class="form-control" name="event[date]" type="text" value="<%= event.date %>">
+                <input class="form-control" name="event[date]" type="date" value="<%= event.date %>">
             </div>
             <div class="form-group">
-                <input class="form-control" name="event[time]" type="text" value="<%= event.time %>">
+                <input class="form-control" name="event[time]" type="time" value="<%= event.time %>">
             </div>
             <div class="form-group">
                 <input class="form-control" name="event[cost]" min="0.0" step="1" type="number" value="<%= event.cost %>">
