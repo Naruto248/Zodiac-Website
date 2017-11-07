@@ -66,13 +66,13 @@ body {
 
 /* Responsive typograph */
 
-@media (min-width: 540px){
+@media (min-width: 992px){
     html {
         font-size: 0.9rem;
     }
 }
 
-@media (min-width: 960px){
+@media (min-width: 1200px){
     html {
         font-size: 1.0rem;
     }
