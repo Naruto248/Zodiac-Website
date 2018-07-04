@@ -7,7 +7,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
     }
     req.flash("error", "Please login first !");
     res.redirect("/login");
-}
+};
 
 middlewareObj.isAdmin = function(req, res, next){
     if(req.isAuthenticated() && req.user.username == "Abhi"){
@@ -15,7 +15,7 @@ middlewareObj.isAdmin = function(req, res, next){
     }
     req.flash("error", "You don't have permission to do that !");
     res.redirect("/events");
-}
+};
 
 middlewareObj.checkCommentOwnership = function(req, res, next){
     if(req.isAuthenticated()){
@@ -24,7 +24,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
                 req.flash("error", "Comment Not Found");
                 res.redirect("/events");
             } else {
-                if(foundComment.author.id.equals(req.user._id)){
+                if(foundComment.author.id.equals(req.user._id) || req.user.username == "Abhi"){
                     next();
                 } else {
                     req.flash("error", "You don't have permission to do that !");
