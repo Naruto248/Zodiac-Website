@@ -13,8 +13,7 @@ var express         = require("express"),
     middleware      = require("./middleware/index.js"),
     seed			= require("./seed.js");
     
-mongoose.connect("mongodb://localhost/zodiac");
-//mongoose.connect("mongodb://abhi:zodiac@ds139585.mlab.com:39585/zodiac");
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
