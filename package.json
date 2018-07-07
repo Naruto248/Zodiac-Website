@@ -1,7 +1,7 @@
 {
-  "name": "yelpcamp",
+  "name": "zodiac",
   "version": "1.0.0",
-  "description": "Yelp Camp, first website",
+  "description": "This is a website where college can exhibit all the events held in the college festival.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

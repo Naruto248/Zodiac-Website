@@ -64,14 +64,25 @@ body {
 }
 
 /* Responsive typograph */
-@media ( min-width : 992px) {
+@media ( min-width : 0px) {
 	html {
-		font-size: 0.9rem;
+		font-size: 0.7rem;
+	}
+}
+
+@media ( min-width : 768px) {
+	html {
+		font-size: 0.8rem;
 	}
 }
 
 @media ( min-width : 1200px) {
 	html {
-		font-size: 1.0rem;
+		font-size: 0.9rem;
+	}
+	
+@media ( min-width : 1920px) {
+	html {
+		font-size: 1rem;
 	}
 }
